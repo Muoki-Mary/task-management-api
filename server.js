@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./database/connection');
+const taskRoutes = require('./routes/tasks');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,6 +25,9 @@ app.get('/health', (req, res) => {
     time: new Date().toISOString()
   });
 });
+
+// API routes
+app.use('/api/tasks', taskRoutes);
 
 app.listen(PORT, function() {
   console.log(`Server started on port ${PORT}`);
