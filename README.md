@@ -3,6 +3,8 @@
 
 A REST API for managing tasks, built with Node.js and Express. Uses SQLite for storage.
 
+<!-- Cache refresh -->
+
 ## Features
 
 - Create, read, update, and delete tasks
@@ -27,64 +29,54 @@ DELETE /api/tasks/:id  # Delete task
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/01-get-all-tasks.png?raw=true)
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/01-create-first-task.png?raw=true)
 
-
-
-GET /api/tasks - Returns empty array [] showing the API is running and database is connected, but no tasks exist yet.
-
-Status: 200 OK
-Purpose: Proves baseline functionality before adding data.
-
-
-
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/02-create-task.png?raw=true)
-
-POST /api/tasks - Creates the first task with title and description data sent in request body.
+POST /api/tasks - Creates first task "Setup Node.js project" with realistic development workflow data.
 
 Status: 201 Created
-Purpose: Shows successful task creation and returns the new task with auto-generated ID.
+Purpose: Demonstrates task creation with meaningful project data.
 
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/02-create-second-task.png?raw=true)
 
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/03-get-all-tasks-after-create.png?raw=true)
-
-
-GET /api/tasks - Retrieves all tasks after creating the first one, now returns an array with one task object.
-
-Status: 200 OK
-Purpose: Confirms the task was successfully saved to database and can be retrieved.
-
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/04-create-second-task.png?raw=true)
-
-
-POST /api/tasks - Creates a second task, demonstrating the API can handle multiple task creation.
+POST /api/tasks - Creates second task "Build API endpoints" showing multiple task creation capability.
 
 Status: 201 Created
-Purpose: Shows the API can create multiple tasks and assigns unique IDs to each new task.
+Purpose: Shows the API can handle multiple tasks with unique IDs.
 
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/05-get-both-tasks.png?raw=true)
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/03-get-all-tasks.png?raw=true)
 
-
-GET /api/tasks - Retrieves all tasks after creating two, now returns an array with both task objects.
-
-Status: 200 OK
-Purpose: Demonstrates the API correctly stores and retrieves multiple tasks from the database.
-
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/06-delete-task.png?raw=true)
-
-
-DELETE /api/tasks/3 - Deletes a specific task by ID, removing it from the database.
+GET /api/tasks - Retrieves both created tasks showing complete data persistence.
 
 Status: 200 OK
-Purpose: Demonstrates the DELETE operation works correctly and can remove tasks by their unique ID.
+Purpose: Demonstrates data retrieval with multiple tasks stored in database.
 
-![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/feature/setup-dependencies/screenshots/07-update-task.png?raw=true)
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/04-update-task-status.png?raw=true)
 
-
-PUT /api/tasks/2 - Updates an existing task by ID, modifying its properties in the database.
+PUT /api/tasks/1 - Updates first task status from "completed" to "in-progress".
 
 Status: 200 OK
-Purpose: Demonstrates the UPDATE operation works correctly and can modify existing tasks, returning success confirmation.
+Purpose: Demonstrates task update functionality with status change.
+
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/05-get-updated-task.png?raw=true)
+
+GET /api/tasks/1 - Verifies the update worked by retrieving the modified task.
+
+Status: 200 OK
+Purpose: Confirms update operation actually changed the database data.
+
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/06-delete-task.png?raw=true)
+
+DELETE /api/tasks/2 - Removes the second task from the database completely.
+
+Status: 200 OK
+Purpose: Demonstrates task deletion functionality.
+
+![App Screenshot](https://github.com/Muoki-Mary/task-management-api/blob/main/screenshots/07-final-state-after-delete.png?raw=true)
+
+GET /api/tasks - Shows final state with only the updated task remaining after deletion.
+
+Status: 200 OK
+Purpose: Confirms deletion worked and shows final database state.
 
 
 
