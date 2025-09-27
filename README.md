@@ -3,6 +3,8 @@
 
 A REST API for managing tasks, built with Node.js and Express. Uses SQLite for storage.
 
+<!-- Cache refresh -->
+
 ## Features
 
 - Create, read, update, and delete tasks
